@@ -1,0 +1,1 @@
+export const saveGame = async (dataObject) => await dataObject.save()
