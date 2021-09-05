@@ -1,10 +1,11 @@
 import express from "express";
 import bodyParser from "body-parser";
 import Mongoose from "mongoose";
+import cors from "cors"
 import "dotenv/config";
 
 //importing routes
-import router from "./src/route";
+import router from "./route";
 
 const port = process.env.PORT || 5500;
 
@@ -13,6 +14,8 @@ const url = process.env.URI
 
 // initialising middleware for parsing application/json
 app.use(bodyParser.json())
+
+app.use(cors())
 
 // routes middleware
 app.use('/api/v1', router);
