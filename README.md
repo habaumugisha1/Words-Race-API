@@ -13,7 +13,7 @@ npm run dev
 ## The end points required
 ### Welcome message
 ```js
-"/"
+"/api/v1"
 ``` 
 ### Saving game in database
 
