@@ -19,6 +19,13 @@ app.use(cors())
 
 // routes middleware
 app.use('/api/v1', router);
+
+// catch all 404 errors
+app.all('*', (req, res, next) => {
+    const err = res.status(404).json({status:404, error:'Url Requested not found'});
+    next(err);
+  });
+  
 // connecting mangoose for storing our scores
 Mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
     console.log("Mongoose connected successful!")
